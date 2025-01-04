@@ -1,0 +1,16 @@
+{
+  "background_color": "var(--primary)",
+  "description": "Circlan",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/images/pwa150x150.png",
+      "sizes": "150x150",
+      "type": "image/"
+    }
+  ],
+  "name": "Circlan",
+  "short_name": "circlan",
+  "start_url": "welcome.html"
+}
