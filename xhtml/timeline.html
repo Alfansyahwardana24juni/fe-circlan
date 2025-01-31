@@ -27,7 +27,181 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<style>
+	.header {
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+	  }
+  
+	  .header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: white;
+		padding: 10px 10px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	  }
+  
+	  .logo img {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+	  }
+  
+	  h1 {
+		font-size: 18px;
+		font-weight: bold;
+		color: #333;
+		margin: 0;
+	  }
+  
+	  .custom-button {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background-color: #f0f4ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+    .custom-button .dots {
+      color: #e79e4a;
+      font-size: 14px;
+    }
+	.calendar {
+            max-width: 390px;
+            margin: 15px auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .calendar-header h2 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .calendar-header .nav-icons {
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+        .calendar-header .nav-icons i {
+            cursor: pointer;
+        }
+        .calendar-table {
+            width: 100%;
+            text-align: center;
+        }
+        .calendar-table th {
+            color: #6c757d;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+        .calendar-table td {
+            padding: 10px;
+            color: #333;
+        }
+        .calendar-table .selected {
+            background-color: #5a67d8;
+            color: #ffffff;
+            border-radius: 50%;
+        }
+		.calendar {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+		.event-card {
+			max-width: 390px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+			margin: 0px auto;
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            justify-content: space-between;
 
+        }
+        .event-image {
+            overflow: hidden;
+            position: relative;
+        }
+        .event-image img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .event-date {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #4a4a4a;
+        }
+        .event-details {
+            padding-left: 15px;		
+			margin-right: 15px;
+            flex-grow: 1;
+        }
+        .event-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .event-category {
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #4a4a4a;
+            border-radius: 15px;
+            font-size: 12px;
+            color: #4a4a4a;
+            margin-top: 5px;
+        }
+        .event-going {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .event-going img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: -10px;
+            border: 2px solid #fff;
+        }
+        .event-going span {
+            font-size: 14px;
+            color: #4a4a4a;
+            margin-left: 10px;
+        }
+        .event-location {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #4a4a4a;
+        }
+        .event-location i {
+            margin-right: 5px;
+        }
+        .event-bookmark {
+            font-size: 18px;
+            color: #4a4a4a;
+        }
+	</style>
 </head>   
 <body class="bg-gradient-2">
 <div class="page-wraper header-fixed">
@@ -41,23 +215,149 @@
 	
     <!-- Header -->
 	<header class="header">
-		<div class="container">
-			<form class="my-3">
-				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search..">
-					<span class="input-group-text"> 
-						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M23.7871 22.7761L17.9548 16.9437C19.5193 15.145 20.4665 12.7982 20.4665 10.2333C20.4665 4.58714 15.8741 0 10.2333 0C4.58714 0 0 4.59246 0 10.2333C0 15.8741 4.59246 20.4665 10.2333 20.4665C12.7982 20.4665 15.145 19.5193 16.9437 17.9548L22.7761 23.7871C22.9144 23.9255 23.1007 24 23.2816 24C23.4625 24 23.6488 23.9308 23.7871 23.7871C24.0639 23.5104 24.0639 23.0528 23.7871 22.7761ZM1.43149 10.2333C1.43149 5.38004 5.38004 1.43681 10.2279 1.43681C15.0812 1.43681 19.0244 5.38537 19.0244 10.2333C19.0244 15.0812 15.0812 19.035 10.2279 19.035C5.38004 19.035 1.43149 15.0865 1.43149 10.2333Z" fill="var(--primary)"/>
-						</svg>
-					</span>
+			<div class="logo">
+				<img src="assets/images/icoo-removebg-preview.png" alt="" height="20px" viewBox="0 0 24 24"
+				width="24px">
+			</div>
+			<h1>My Calendar Event</h1>
+			<div class="justify-content-between">
+				<button class="custom-button">
+				  <div class="dots">●●●</div>
+				</button>
+			  </div>
+		</header>
+		<!-- Header End -->
+			<!-- calender -->
+			<div class="calendar">
+				<div class="calendar-header">
+					<h2>Januari 2025</h2>
+					<div class="nav-icons">
+						<i class="fas fa-chevron-left"></i>
+						<i class="fas fa-chevron-right"></i>
+					</div>
 				</div>
-			</form>
-		</div>
-	</header>
-    <!-- Header End -->
+				<table class="calendar-table">
+					<thead>
+						<tr>
+							<th>Mo</th>
+							<th>Tu</th>
+							<th>We</th>
+							<th>Th</th>
+							<th>Fr</th>
+							<th>Sa</th>
+							<th>Su</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+							<td>11</td>
+							<td>12</td>
+							<td>13</td>
+							<td>14</td>
+						</tr>
+						<tr>
+							<td>15</td>
+							<td>16</td>
+							<td>17</td>
+							<td>18</td>
+							<td>19</td>
+							<td>20</td>
+							<td>21</td>
+						</tr>
+						<tr>
+							<td>22</td>
+							<td>23</td>
+							<td class="selected">24</td>
+							<td>25</td>
+							<td>26</td>
+							<td>27</td>
+							<td>28</td>
+						</tr>
+						<tr>
+							<td>29</td>
+							<td>30</td>
+							<td>31</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						</tbody>
+				</table>
+			</div>
+			<!-- end calender -->
+
+			<!-- content -->
+			<div class="container">                                     
+				<div class="event-card mb-4 ">
+					<div class="event-image rounded-start position-reight">
+						<img src="https://placehold.co/150x150" alt="DJ performing at a concert with a crowd in the background">
+						<div class="event-date">18 Dec</div>
+					</div>
+					<div class="event-details">
+						<div class="event-title">DJ Concerto Rico</div>
+						<div class="event-category">fest</div>
+						<div class="event-going">
+							<img src="https://placehold.co/30x30" alt="Profile picture of a person going to the event">
+							<img src="https://placehold.co/30x30" alt="Profile picture of a person going to the event">
+							<img src="https://placehold.co/30x30" alt="Profile picture of a person going to the event">
+							<span>20K+ Going</span>
+						</div>
+						<div class="event-location">
+							<i class="fas fa-map-marker-alt"></i>
+							<span>LA Avenue, Indonesia</span>
+							<div class="event-bookmark ms-auto position-relative bottom-0 start-0">
+								<i class="fas fa-bookmark"></i>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+
+				<div class="event-card ">
+					<div class="event-image">
+						<img src="https://placehold.co/150x150" alt="DJ performing at a concert with a crowd in the background">
+						<div class="event-date">18 Dec</div>
+					</div>
+					<div class="event-details">
+						<div class="event-title">DJ Concerto Rico</div>
+						<div class="event-category">event</div>
+						<div class="event-going">
+							<img src="https://placehold.co/30x30" alt="Profile picture of a person going to the event">
+							<img src="https://placehold.co/30x30" alt="Profile picture of a person going to the event">
+							<img src="https://placehold.co/30x30" alt="Profile picture of a person going to the event">
+							<span>20K+ Going</span>
+						</div>
+						<div class="event-location">
+							<i class="fas fa-map-marker-alt"></i>
+							<span>LA Avenue, Indonesia</span>
+							<div class="event-bookmark ms-auto position-relative bottom-0 start-0">
+								<i class="fas fa-bookmark"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</body>
+		</html>
+		
+			<!-- end content -->
+	
     
     <!-- Page Content -->
-    <div class="page-content">
+    <!-- <div class="page-content">
         <div class="content-inner pt-0">
 			<div class="container">
 				<div class="photo-viewer">
@@ -250,7 +550,7 @@
 				</div>    
 			</div>    
 		</div>
-    </div>    
+    </div>     -->
     <!-- Page Content End-->
     
     <!-- Menubar -->
@@ -259,17 +559,20 @@
 			<a href="index.html" class="nav-link">
 				<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" xmlns:v="https://vecta.io/nano"><path d="M21.44 11.035a.75.75 0 0 1-.69.465H18.5V19a2.25 2.25 0 0 1-2.25 2.25h-3a.75.75 0 0 1-.75-.75V16a.75.75 0 0 0-.75-.75h-1.5a.75.75 0 0 0-.75.75v4.5a.75.75 0 0 1-.75.75h-3A2.25 2.25 0 0 1 3.5 19v-7.5H1.25a.75.75 0 0 1-.69-.465.75.75 0 0 1 .158-.818l9.75-9.75A.75.75 0 0 1 11 .246a.75.75 0 0 1 .533.222l9.75 9.75a.75.75 0 0 1 .158.818z" fill="#b5b5b5"/></svg>
 			</a>
-            <a href="timeline.html" class="nav-link stroke active">
-				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#b5b5b5" stroke-opacity="1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-					<path d="M21 21L16.65 16.65" stroke="#b5b5b5" stroke-opacity="1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-				</svg>
-			</a>
-			 <a href="create-post.html" class="nav-link add-post">
+			<a href="timeline.html" class="nav-link active">
+                <svg width="22" height="22" viewBox="0 0 448 512" fill="#b5b5b5" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M160 32V64H288V32C288 14.33 302.3 0 320 0C337.7 0 352 14.33 352 32V64H400C426.5 64 448 85.49 448 112V160H0V112C0 85.49 21.49 64 48 64H96V32C96 14.33 110.3 0 128 0C145.7 0 160 14.33 160 32zM0 192H448V464C448 490.5 426.5 512 400 512H48C21.49 512 0 490.5 0 464V192zM64 304C64 312.8 71.16 320 80 320H112C120.8 320 128 312.8 128 304V272C128 263.2 120.8 256 112 256H80C71.16 256 64 263.2 64 272V304zM192 304C192 312.8 199.2 320 208 320H240C248.8 320 256 312.8 256 304V272C256 263.2 248.8 256 240 256H208C199.2 256 192 263.2 192 272V304zM336 256C327.2 256 320 263.2 320 272V304C320 312.8 327.2 320 336 320H368C376.8 320 384 312.8 384 304V272C384 263.2 376.8 256 368 256H336zM64 432C64 440.8 71.16 448 80 448H112C120.8 448 128 440.8 128 432V400C128 391.2 120.8 384 112 384H80C71.16 384 64 391.2 64 400V432zM208 384C199.2 384 192 391.2 192 400V432C192 440.8 199.2 448 208 448H240C248.8 448 256 440.8 256 432V400C256 391.2 248.8 384 240 384H208zM320 432C320 440.8 327.2 448 336 448H368C376.8 448 384 440.8 384 432V400C384 391.2 376.8 384 368 384H336C327.2 384 320 391.2 320 400V432z" />
+                </svg>
+            </a>
+			<a href="create-post.html" class="nav-link add-post">
 				<i class="fa-solid fa-plus"></i>
 			</a>
-			<a href="chat.html" class="nav-link">
-				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#b5b5b5" viewBox="0 0 511.606 511.606" xmlns:v="https://vecta.io/nano"><path d="M436.594 74.943c-99.917-99.917-261.637-99.932-361.568 0-80.348 80.347-95.531 199.817-48.029 294.96L.662 485.742c-3.423 15.056 10.071 28.556 25.133 25.133l115.839-26.335c168.429 84.092 369.846-37.653 369.846-228.812 0-68.29-26.595-132.494-74.886-180.785zM309.143 319.394h-160c-11.598 0-21-9.402-21-21s9.402-21 21-21h160c11.598 0 21 9.402 21 21s-9.402 21-21 21zm53.334-85.333H149.143c-11.598 0-21-9.402-21-21s9.402-21 21-21h213.334c11.598 0 21 9.402 21 21s-9.403 21-21 21z"/></svg>
+			<a href="notification.html" class="nav-link">
+				<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#b5b5b5">
+					<path
+						d="M6,13c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4S8.2,13,6,13z M12,3C9.8,3,8,4.8,8,7s1.8,4,4,4s4-1.8,4-4S14.2,3,12,3z M18,13 c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4S20.2,13,18,13z" />
+				</svg>
 			</a>
 			<a href="profile.html" class="nav-link">
 				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="21" fill="#b5b5b5" xmlns:v="https://vecta.io/nano"><path d="M8 7.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 1 0 0 7.5zm7.5 9v1.5c-.002.199-.079.39-.217.532C13.61 20.455 8.57 20.5 8 20.5s-5.61-.045-7.282-1.718C.579 18.64.501 18.449.5 18.25v-1.5a7.5 7.5 0 1 1 15 0z"/></svg>
@@ -285,5 +588,6 @@
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/settings.js"></script>
 <script src="assets/js/custom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
